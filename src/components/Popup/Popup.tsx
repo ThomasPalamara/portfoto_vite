@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ImageContainer from '../ImageContainer';
 
 type Props = {
@@ -6,34 +6,34 @@ type Props = {
   photos: Photo[];
   closePopup: () => void;
 };
-const controlClasses = 'z-50 bg-white p-2 cursor-pointer';
+// const controlClasses = 'z-50 bg-white p-2 cursor-pointer';
 
 const Popup = ({ photos, current, closePopup }: Props): JSX.Element => {
-  const [currentPhoto, setCurrentPhoto] = useState<Photo>(
+  const [currentPhoto] = useState<Photo>(
     photos.find((photo) => photo.fileId === current) || photos[0]
   );
 
-  const nexStep = () => {
-    const currentIndex = photos.findIndex(
-      (photo) => photo.fileId === currentPhoto?.fileId
-    );
-    if (currentIndex === photos.length - 1) {
-      return;
-    }
-    const nextPhoto = photos[currentIndex + 1];
-    setCurrentPhoto(nextPhoto);
-  };
+  // const nexStep = () => {
+  //   const currentIndex = photos.findIndex(
+  //     (photo) => photo.fileId === currentPhoto?.fileId
+  //   );
+  //   if (currentIndex === photos.length - 1) {
+  //     return;
+  //   }
+  //   const nextPhoto = photos[currentIndex + 1];
+  //   setCurrentPhoto(nextPhoto);
+  // };
 
-  const prevStep = () => {
-    const currentIndex = photos.findIndex(
-      (photo) => photo.fileId === currentPhoto?.fileId
-    );
-    if (currentIndex === 0) {
-      return;
-    }
-    const prevPhoto = photos[currentIndex - 1];
-    setCurrentPhoto(prevPhoto);
-  };
+  // const prevStep = () => {
+  //   const currentIndex = photos.findIndex(
+  //     (photo) => photo.fileId === currentPhoto?.fileId
+  //   );
+  //   if (currentIndex === 0) {
+  //     return;
+  //   }
+  //   const prevPhoto = photos[currentIndex - 1];
+  //   setCurrentPhoto(prevPhoto);
+  // };
 
   return (
     <div

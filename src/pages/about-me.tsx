@@ -1,12 +1,10 @@
-import React from 'react';
-import Image from 'next/image';
 import Title from '../components/Title';
 
 const AboutMe = () => {
   return (
     <div className="flex">
       <div className="w-full relative overflow-hidden">
-        <Image
+        <img
           src="/about-me.jpg"
           alt="picture of Thomas"
           width={0}

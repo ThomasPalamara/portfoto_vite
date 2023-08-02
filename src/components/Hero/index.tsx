@@ -6,7 +6,6 @@ const Hero: React.FC = () => {
   return (
     <a
       href="/portfolio"
-      passHref
       className="h-full w-full bg-center bg-cover hero"
       style={{
         backgroundImage:

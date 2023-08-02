@@ -1,4 +1,3 @@
-import React from 'react';
 import { GridView, ViewCarouselOutlined } from '@mui/icons-material';
 
 type Props = {

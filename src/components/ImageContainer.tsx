@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { IKImage } from 'imagekitio-react';
 
 type Props = {
@@ -14,7 +13,6 @@ const ImageContainer = ({
   onClick,
   ...other
 }: Props) => {
-  const [open, setOpen] = useState(false);
   const Image = (
     <IKImage
       onClick={() => onClick && onClick(photo)}

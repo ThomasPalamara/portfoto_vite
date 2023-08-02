@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { useOnHoverOutside } from '../../utils/hooks';
 import { categories } from '../../utils/constants';
 
 type Props = {
@@ -10,12 +9,6 @@ type Props = {
 const Nav: React.FC<Props> = ({ height }) => {
   const dropdownRef = useRef(null);
   const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);
-
-  const closeHoverMenu = () => {
-    setMenuDropDownOpen(false);
-  };
-
-  useOnHoverOutside(dropdownRef, closeHoverMenu);
 
   const navItems = [
     {

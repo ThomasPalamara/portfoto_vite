@@ -1,15 +1,13 @@
-import React from 'react';
 import { gutter, categories } from '../../utils/constants';
 import HorizontalScroll from 'react-scroll-horizontal';
 import { Link } from 'react-router-dom';
 
 const portfolio = () => {
-  const HScroll = HorizontalScroll as any;
   console.log(import.meta.env);
   console.log(import.meta.env.IK_PUBLIC_KEY);
   return (
     <div className="h-full w-full">
-      <HScroll reverseScroll>
+      <HorizontalScroll reverseScroll>
         {categories.map((category, i) => (
           <Link
             to={`/portfolio/${category.slug}`}
@@ -26,7 +24,7 @@ const portfolio = () => {
             </div>
           </Link>
         ))}
-      </HScroll>
+      </HorizontalScroll>
     </div>
   );
 };

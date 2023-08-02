@@ -1,12 +1,6 @@
 import React, { useState, useContext } from 'react';
 import Popup from '../Popup/Popup';
 
-interface Toast {
-  //   id: number;
-  //   message: string;
-  //   variant: 'error' | 'success' | 'primary';
-}
-
 type ContextProps = {
   openPopup: (currentPhoto: Photo['fileId']) => void;
   setPhotos: (photos: Photo[]) => void;

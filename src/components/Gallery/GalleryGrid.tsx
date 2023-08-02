@@ -1,19 +1,19 @@
 import React from 'react';
 import ImageContainer from '../../components/ImageContainer';
-import { categories, gutter } from '../../utils/constants';
+import { gutter } from '../../utils/constants';
 import Masonry from '@mui/lab/Masonry';
-import { useRouter } from 'next/router';
 import Title from '../Title';
 import { usePopup } from '../Contexts/PopupContext';
 
 type Props = { photos: Photo[] };
 
 const Category: React.FC<Props> = ({ photos }) => {
-  const router = useRouter();
   const { openPopup } = usePopup(photos);
-
-  const arrPath = router.asPath.split('/');
-  const page = categories.find((e) => arrPath[arrPath.length - 1] === e.slug);
+  //TODO
+  const page = {
+    title: 'lofoten',
+    description: 'sadf',
+  };
 
   return (
     <Masonry columns={4} spacing={2}>

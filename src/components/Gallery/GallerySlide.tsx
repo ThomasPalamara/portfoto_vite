@@ -1,27 +1,26 @@
-import React from 'react';
 import ImageContainer from '../../components/ImageContainer';
-import { categories, gutter } from '../../utils/constants';
+import { gutter } from '../../utils/constants';
 import HorizontalScroll from 'react-scroll-horizontal';
 
 import { usePopup } from '../Contexts/PopupContext';
 import Title from '../Title';
-import { useRouter } from 'next/router';
 
 type Props = {
   photos: Photo[];
 };
 
 const GallerySlide = ({ photos }: Props) => {
-  const HScroll = HorizontalScroll as any;
   const { openPopup } = usePopup(photos);
-  const router = useRouter();
 
-  const arrPath = router.asPath.split('/');
-  const page = categories.find((e) => arrPath[arrPath.length - 1] === e.slug);
+  //TODO
+  const page = {
+    title: 'lofoten',
+    description: 'sadf',
+  };
 
   return (
     <div className=" h-full w-full">
-      <HScroll reverseScroll>
+      <HorizontalScroll reverseScroll>
         <div
           className="bg-white py-10 px-8 flex-shrink-0"
           style={{ width: '350px' }}
@@ -43,7 +42,7 @@ const GallerySlide = ({ photos }: Props) => {
               onClick={() => openPopup(photo.fileId)}
             />
           ))}
-      </HScroll>
+      </HorizontalScroll>
     </div>
   );
 };
