@@ -1,6 +1,6 @@
 import { StrictMode, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider, useLocation } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 
 import 'tailwindcss/tailwind.css';
 import './index.css';

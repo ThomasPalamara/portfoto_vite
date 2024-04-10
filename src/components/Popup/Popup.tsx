@@ -10,7 +10,7 @@ type Props = {
 // const controlClasses = 'z-50 bg-white p-2 cursor-pointer';
 
 const Popup = ({ photos, current, closePopup }: Props): JSX.Element => {
-  const [currentPhoto, setCurrentPhoto] = useState<Photo>(
+  const [currentPhoto] = useState<Photo>(
     photos.find((photo) => photo.fileId === current) || photos[0]
   );
 

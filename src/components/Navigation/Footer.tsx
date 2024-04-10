@@ -1,4 +1,3 @@
-import React from 'react';
 import { Instagram, LinkedIn } from '@mui/icons-material';
 
 type Props = {

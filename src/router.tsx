@@ -1,7 +1,5 @@
-import React from 'react';
 import {
   Route,
-  Routes,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
