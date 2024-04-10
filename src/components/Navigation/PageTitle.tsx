@@ -5,6 +5,7 @@ type Props = {
 const PageTitle = (props: Props) => {
   return (
     <div
+      className="hidden md:flex"
       style={{
         position: 'fixed',
         width: '180px',
@@ -21,10 +22,10 @@ const PageTitle = (props: Props) => {
         transformOrigin: 'left top',
         zIndex: 12,
         background: '#292929',
-        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
+        padding: '10px',
       }}
     >
       {props.title}

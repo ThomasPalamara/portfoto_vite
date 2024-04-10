@@ -1,36 +1,40 @@
-import { IKImage } from 'imagekitio-react';
-
 type Props = {
   photo: Partial<Photo> & { filePath: string };
+  quality?: number;
   woWrapper?: boolean;
   onClick?: (arg0: any) => void;
   [key: string]: any;
+  onLoadingComplete?: (id: string) => void;
 };
 
 const ImageContainer = ({
   photo,
+  quality = 20,
   woWrapper = false,
   onClick,
+  onLoadingComplete,
   ...other
 }: Props) => {
-  const Image = (
-    <IKImage
+  const comp = (
+    <img
       onClick={() => onClick && onClick(photo)}
-      className="h-full m-auto"
-      path={photo.filePath}
-      lqip={{ active: true, quality: 20 }}
+      src={
+        `https://ik.imagekit.io/uiw3np2kr8ww/tr:q-${quality}` + photo.filePath
+      }
+      alt=""
+      width={0}
+      height={0}
+      onLoad={() => {
+        onLoadingComplete && photo.fileId && onLoadingComplete(photo.fileId);
+      }}
+      className="h-full w-auto cursor-pointer"
+      loading="eager"
+      data-id={photo.fileId}
       {...other}
     />
   );
-  if (woWrapper) return Image;
-  return (
-    <figure
-      className="h-full w-auto text-center"
-      // style={{ margin: `0 ${gutter}px` }}
-    >
-      {Image}
-    </figure>
-  );
+  if (woWrapper) return comp;
+  return <figure className="h-full w-auto text-center">{comp}</figure>;
 };
 
 export default ImageContainer;

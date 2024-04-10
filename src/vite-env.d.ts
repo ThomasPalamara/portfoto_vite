@@ -23,3 +23,9 @@ type Photo = {
     order: number;
   };
 };
+
+type Category = {
+  title: string;
+  slug: string;
+  description: string;
+};

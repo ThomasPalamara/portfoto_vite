@@ -5,15 +5,17 @@ type Props = {
   height: number | string;
 };
 
-const Nav: React.FC<Props> = ({ height }) => {
+const Nav = ({ height }: Props) => {
   const socialItems = [
     {
       icon: Instagram,
-      link: 'https://www.instagram.com/tomapalamara/',
+      link: 'https://www.instagram.com/thomaspalamara.photography/',
+      label: 'Instagram account',
     },
     {
       icon: LinkedIn,
       link: 'https://www.linkedin.com/in/thomas-palamara-a8ab36a7/',
+      label: 'LinkedIn account',
     },
   ];
   return (
@@ -43,6 +45,7 @@ const Nav: React.FC<Props> = ({ height }) => {
               target="_blank"
               href={item.link}
               rel="noreferrer"
+              aria-label={item.label}
             >
               <item.icon fontSize="small" sx={{ color: '#666' }} />
             </a>

@@ -1,14 +1,13 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { categories } from '../../utils/constants';
+import { useState } from 'react';
+import { useIsMobile } from '../../utils/hooks';
 
 type Props = {
   height: number | string;
 };
 
-const Nav: React.FC<Props> = ({ height }) => {
-  const dropdownRef = useRef(null);
-  const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);
+const Nav = ({ height }: Props) => {
+  const [mobileNav, setMobileNav] = useState(false);
+  const isMobile = useIsMobile();
 
   const navItems = [
     {
@@ -17,7 +16,7 @@ const Nav: React.FC<Props> = ({ height }) => {
     },
     {
       title: 'Portfolio',
-      slug: 'portfolio',
+      slug: '/portfolio',
       isDropdown: false,
     },
     {
@@ -31,74 +30,56 @@ const Nav: React.FC<Props> = ({ height }) => {
   ];
   return (
     <nav
-      className="flex items-center justify-between flex-wrap bg-teal-500 p-6"
-      style={{ height: height }}
+      className="flex flex-wrap items-center justify-between"
+      style={{ height: isMobile ? 'unset' : height }}
     >
-      <div className="flex items-center flex-shrink-0 mr-6">
+      <a href="/" className="flex items-center">
+        <img style={{ width: '160px' }} src="/logo.svg" alt="logo" />
+      </a>
+      <button
+        data-collapse-toggle="navbar-default"
+        type="button"
+        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-sm md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default"
+        aria-expanded="false"
+        onClick={() => setMobileNav(!mobileNav)}
+      >
+        <span className="sr-only">Open main menu</span>
         <svg
-          className="fill-black h-8 w-8 mr-2"
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
+          className="w-5 h-5"
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
         >
-          <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
         </svg>
-        <span className="font-semibold text-xl tracking-tight uppercase">
-          Thomas Palamara
-        </span>
-      </div>
-
-      <div className="flex h-full">
-        {navItems.map((item, i) => (
-          <div key={i}>
-            {!item.isDropdown ? (
-              <div className="flex items-center justify-center text-center">
-                <Link
-                  to={`${item.slug}`}
-                  className="nav__link block mt-4 lg:inline-block lg:mt-0 text-black font-extralight tracking-widest text-sm mr-8"
-                >
-                  {item.title.toUpperCase()}
-                </Link>
-              </div>
-            ) : (
-              <div
-                className="flex items-center justify-center text-center"
-                onMouseOver={() => setMenuDropDownOpen(true)}
-                ref={dropdownRef}
+      </button>
+      <div
+        className={`${
+          !mobileNav ? 'hidden' : 'shadow-lg'
+        } z-10 w-full md:block md:w-auto  p-8`}
+        id="navbar-default"
+      >
+        <ul className="font-medium flex flex-col px-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
+          {navItems.map((item, i) => (
+            <li key={i}>
+              <a
+                href={`${item.slug}`}
+                onClick={() => setMobileNav(false)}
+                className="nav__link block my-2 lg:inline-block lg:my-0 text-black font-extralight tracking-widest text-sm mr-8"
               >
-                <Link
-                  to={`${item.slug}`}
-                  className="nav__link block mt-4 lg:inline-block lg:mt-0 text-black font-extralight tracking-widest text-sm mr-8 relative cursor-pointer"
-                >
-                  {item.title.toUpperCase()}
-                  {isMenuDropDownOpen && (
-                    <div
-                      className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="menu-button"
-                      tabIndex={-1}
-                    >
-                      <div className="text-left" role="none">
-                        {categories.map((category, i) => (
-                          <div key={i} className="px-6 py-3 hover:bg-gray-100">
-                            <Link
-                              className="text-black"
-                              to={`/category/${category.slug}`}
-                            >
-                              {category.title}
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </Link>
-              </div>
-            )}
-          </div>
-        ))}
+                {item.title.toUpperCase()}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
