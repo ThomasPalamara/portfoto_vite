@@ -38,26 +38,8 @@ const GallerySlide = ({ photos, category, isLoading }: Props) => {
       : []),
   ];
   console.log('galleryElements :', galleryElements());
-
   return (
     <div className="h-full w-full">
-      {isLoading ||
-        !photos ||
-        (photos.length === 0 &&
-          // Generate array of placeholders with random width
-          [...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:justify-center md:items-center bg-white"
-              style={{
-                margin: `0 ${gutter}px`,
-                // random width between 650 and 2150
-                width: Math.random() * 1500 + 650,
-              }}
-            >
-              <div className="loader" />
-            </div>
-          )))}
       {photos && photos.length > 0 && (
         <HScroll reverseScroll>{galleryElements()}</HScroll>
       )}

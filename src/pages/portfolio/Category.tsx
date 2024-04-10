@@ -8,6 +8,7 @@ import GalleryControl from '../../components/Gallery/GalleryControl';
 import { useIsMobile } from '../../utils/hooks';
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
+import Loader from '../../components/Loader';
 
 const Category = () => {
   const [data, setData] = useState<Photo[] | undefined>(undefined);
@@ -41,6 +42,7 @@ const Category = () => {
 
   const Gallery = grid || isMobile ? GalleryGrid : GallerySlide;
 
+  if (isLoading || !data) return <Loader />;
   return (
     <>
       <Helmet>

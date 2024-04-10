@@ -25,21 +25,6 @@ const GalleryGrid = ({ photos, category, isLoading }: Props) => {
           </span>
         </div>
       </div>
-      {isLoading ||
-        !photos ||
-        (photos.length === 0 &&
-          [...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center bg-white"
-              style={{
-                width: colSize,
-                marginBottom: gutter,
-                // random height between 150 and 300
-                height: Math.random() * 150 + 150,
-              }}
-            />
-          )))}
       {photos &&
         photos.length > 0 &&
         photos.map((photo) => (
