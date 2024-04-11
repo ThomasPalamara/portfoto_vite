@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   const titleClasses = 'font-semibold letter-wide text-white';
   const dashClasses = 'hero__dash bg-white w-10 h-0.5 mx-4';
   return (
-    <a
-      href="/portfolio"
+    <Link
+      to="/portfolio"
       className="h-full w-full bg-center bg-cover hero"
       style={{
         backgroundImage:
@@ -18,7 +20,7 @@ const Hero = () => {
           <div className={dashClasses} />
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

@@ -3,6 +3,7 @@ import { gutter, categories, siteTitle } from '../../utils/constants';
 import HorizontalScroll from 'react-scroll-horizontal';
 import { useIsMobile } from '../../utils/hooks';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const itemWidth = 450 + gutter * 2;
@@ -21,8 +22,8 @@ const Portfolio = () => {
 
   const categoryElements = () =>
     categories.map((category, i) => (
-      <a
-        href={`portfolio/${category.slug}`}
+      <Link
+        to={`portfolio/${category.slug}`}
         key={i}
         className="bg-center bg-cover flex justify-center items-end pb-20 flex-shrink-0"
         style={{
@@ -34,7 +35,7 @@ const Portfolio = () => {
         <div className="bg-white shadow-xl py-2 px-5">
           <h2>{category.title}</h2>
         </div>
-      </a>
+      </Link>
     ));
 
   const mobileCategoryElements = () =>
@@ -47,8 +48,8 @@ const Portfolio = () => {
           padding: `${gutter}px`,
         }}
       >
-        <a
-          href={`portfolio/${category.slug}`}
+        <Link
+          to={`portfolio/${category.slug}`}
           className="bg-center bg-cover flex justify-center items-end pb-4 h-full w-full px-3"
           style={{
             backgroundImage: `url(categories/${category.slug}.jpg)`,
@@ -57,7 +58,7 @@ const Portfolio = () => {
           <div className="bg-white shadow-xl py-2 px-5">
             <h2>{category.title}</h2>
           </div>
-        </a>
+        </Link>
       </div>
     ));
   return (

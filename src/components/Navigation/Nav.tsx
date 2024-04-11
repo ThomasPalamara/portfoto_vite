@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useIsMobile } from '../../utils/hooks';
-
+import { NavLink } from 'react-router-dom';
 type Props = {
   height: number | string;
 };
@@ -33,9 +33,9 @@ const Nav = ({ height }: Props) => {
       className="flex flex-wrap items-center justify-between"
       style={{ height: isMobile ? 'unset' : height }}
     >
-      <a href="/" className="flex items-center">
+      <NavLink href="/" className="flex items-center">
         <img style={{ width: '160px' }} src="/logo.svg" alt="logo" />
-      </a>
+      </NavLink>
       <button
         data-collapse-toggle="navbar-default"
         type="button"
@@ -70,13 +70,13 @@ const Nav = ({ height }: Props) => {
         <ul className="font-medium flex flex-col px-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
           {navItems.map((item, i) => (
             <li key={i}>
-              <a
-                href={`${item.slug}`}
+              <NavLink
+                to={`${item.slug}`}
                 onClick={() => setMobileNav(false)}
                 className="nav__link block my-2 lg:inline-block lg:my-0 text-black font-extralight tracking-widest text-sm mr-8"
               >
                 {item.title.toUpperCase()}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

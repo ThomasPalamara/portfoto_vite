@@ -1,4 +1,5 @@
 import { Instagram, LinkedIn } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 type Props = {
   height: number | string;
@@ -42,8 +43,8 @@ const Nav = ({ height }: Props) => {
             <a
               className="cursor-pointer"
               target="_blank"
+              rel="noopener noreferrer"
               href={item.link}
-              rel="noreferrer"
               aria-label={item.label}
             >
               <item.icon fontSize="small" sx={{ color: '#666' }} />

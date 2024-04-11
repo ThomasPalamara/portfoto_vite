@@ -50,6 +50,8 @@ const Contact = () => {
           <p className="pb-8">
             You can also follow me on my instagram{' '}
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-400 font-normal"
               href="https://www.instagram.com/tomapalamara/"
               aria-label="Instagram account"
