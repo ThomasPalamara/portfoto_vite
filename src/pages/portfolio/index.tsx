@@ -2,7 +2,7 @@ import React from 'react';
 import { gutter, categories, siteTitle } from '../../utils/constants';
 import HorizontalScroll from 'react-scroll-horizontal';
 import { useIsMobile } from '../../utils/hooks';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {

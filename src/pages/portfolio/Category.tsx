@@ -7,7 +7,7 @@ import GalleryGrid from '../../components/Gallery/GalleryGrid';
 import GalleryControl from '../../components/Gallery/GalleryControl';
 import { useIsMobile } from '../../utils/hooks';
 import { useParams } from 'react-router';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Loader from '../../components/Loader';
 
 const Category = () => {

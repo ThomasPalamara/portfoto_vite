@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { Alert } from '@mui/material';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
   const form = React.useRef<HTMLFormElement>(null);
@@ -33,6 +33,11 @@ const Contact = () => {
     <>
       <Helmet>
         <title>{'Contact me - ' + siteTitle}</title>
+        <link
+          rel="preload"
+          as="image"
+          href="https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg"
+        />
       </Helmet>
       <div
         className={
@@ -131,7 +136,7 @@ const Contact = () => {
             style={{
               maxWidth: '700px',
               backgroundImage:
-                'url("https://ik.imagekit.io/uiw3np2kr8ww/tr:q-30/contact_qDbNusnok.jpg?updatedAt=1707574697089")',
+                'url("https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg")',
             }}
           />
         </div>

@@ -7,6 +7,7 @@ import './index.css';
 
 import router from './router';
 import { PopupContextProvider } from './components/Contexts/PopupContext';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,19 @@ const app = createRoot(document.getElementById('root')!);
 
 app.render(
   <StrictMode>
-    <App />
+    <HelmetProvider>
+      <Helmet>
+        <link rel="dns-prefetch preconnect" href="https://ik.imagekit.io" />
+        <link
+          rel="dns-prefetch preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="dns-prefetch preconnect"
+          href="https://portfoto-api.onrender.com"
+        />
+      </Helmet>
+      <App />
+    </HelmetProvider>
   </StrictMode>
 );

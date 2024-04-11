@@ -1,7 +1,7 @@
 import Title from '../components/Title';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const AboutMe = () => {
   const isMobile = useIsMobile();
@@ -9,6 +9,11 @@ const AboutMe = () => {
     <>
       <Helmet>
         <title>{'About me - ' + siteTitle}</title>
+        <link
+          rel="preload"
+          as="image"
+          href="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg"
+        />
       </Helmet>
       <div
         className={isMobile ? '' : 'flex flex-col md:flex-row'}
@@ -20,7 +25,7 @@ const AboutMe = () => {
           }`}
         >
           <img
-            src="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg?updatedAt=1687126468013"
+            src="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg"
             alt="picture of Thomas"
             width={0}
             height={0}
