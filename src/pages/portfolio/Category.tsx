@@ -50,7 +50,7 @@ const Category = () => {
       </Helmet>
       {!isMobile && <GalleryControl grid={grid} setGrid={setGrid} />}
 
-      <Gallery photos={data} isLoading={isLoading} category={category} />
+      <Gallery photos={data} category={category} />
     </>
   );
 };

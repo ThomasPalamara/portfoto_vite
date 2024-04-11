@@ -33,7 +33,7 @@ const Nav = ({ height }: Props) => {
       className="flex flex-wrap items-center justify-between"
       style={{ height: isMobile ? 'unset' : height }}
     >
-      <NavLink href="/" className="flex items-center">
+      <NavLink to="/" className="flex items-center">
         <img style={{ width: '160px' }} src="/logo.svg" alt="logo" />
       </NavLink>
       <button

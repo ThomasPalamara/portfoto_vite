@@ -1,5 +1,4 @@
 import { Instagram, LinkedIn } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
 
 type Props = {
   height: number | string;

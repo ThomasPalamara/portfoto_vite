@@ -5,9 +5,9 @@ import Title from '../Title';
 import { usePopup } from '../Contexts/PopupContext';
 import { useIsMobile } from '../../utils/hooks';
 
-type Props = { photos?: Photo[]; category: Category; isLoading: boolean };
+type Props = { photos?: Photo[]; category: Category };
 
-const GalleryGrid = ({ photos, category, isLoading }: Props) => {
+const GalleryGrid = ({ photos, category }: Props) => {
   const { openPopup } = usePopup(photos || []);
   const isMobile = useIsMobile();
   const colSize = isMobile ? '49%' : '32%';
