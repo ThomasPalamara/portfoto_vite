@@ -23,7 +23,7 @@ const Portfolio = () => {
   const categoryElements = () =>
     categories.map((category, i) => (
       <Link
-        to={`portfolio/${category.slug}`}
+        to={`/portfolio/${category.slug}`}
         key={i}
         className="bg-center bg-cover flex justify-center items-end pb-20 flex-shrink-0"
         style={{
@@ -49,7 +49,7 @@ const Portfolio = () => {
         }}
       >
         <Link
-          to={`portfolio/${category.slug}`}
+          to={`/portfolio/${category.slug}`}
           className="bg-center bg-cover flex justify-center items-end pb-4 h-full w-full px-3"
           style={{
             backgroundImage: `url(categories/${category.slug}.jpg)`,
