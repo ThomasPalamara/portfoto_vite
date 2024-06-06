@@ -66,7 +66,12 @@ const Portfolio = () => {
       <Helmet>
         <title>{'Portfolio - ' + siteTitle}</title>
       </Helmet>
-      <div className="h-full w-full flex justify-center" ref={ref}>
+      <div
+        className={`h-full w-full flex justify-center ${
+          isMobile && 'flex-wrap'
+        }`}
+        ref={ref}
+      >
         {isMobile ? (
           mobileCategoryElements()
         ) : isOverflowed ? (

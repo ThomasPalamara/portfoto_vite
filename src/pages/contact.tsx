@@ -44,9 +44,8 @@ const Contact = () => {
         className={
           isMobile ? 'flex flex-col-reverse' : 'flex flex-col md:flex-row'
         }
-        style={{ minHeight: isMobile ? 'unset' : '80%' }}
       >
-        <div className="bg-white pr-10 pl-12 py-9 text-base font-extralight overflow-scroll flex flex-col justify-center">
+        <div className="bg-white pr-10 pl-12 text-base font-extralight overflow-scroll flex flex-col justify-center pt-24 pb-9 md:py-9">
           <Title title="Contact" />
           <p className="pb-2">
             Do not hesitate to contact me for whatever reason, a problem about
@@ -129,11 +128,11 @@ const Contact = () => {
         </div>
         <div
           className={`w-full relative overflow-hidden ${
-            isMobile ? 'h-44' : ''
+            isMobile ? 'hidden' : ''
           }`}
         >
           <ImageWithTransition
-            src="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg"
+            src="https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg"
             alt="picture of Thomas"
             width={0}
             height={0}
