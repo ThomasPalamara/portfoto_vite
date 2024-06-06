@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ImageContainer from '../ImageContainer';
+import ImageContainer from '../ImageKitContainer';
 import CloseIcon from '@mui/icons-material/Close';
 
 type Props = {

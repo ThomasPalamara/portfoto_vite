@@ -1,4 +1,4 @@
-import ImageContainer from '../../components/ImageContainer';
+import ImageKitContainer from '../ImageKitContainer';
 import { gutter } from '../../utils/constants';
 import Masonry from '@mui/lab/Masonry';
 import Title from '../Title';
@@ -36,7 +36,7 @@ const GalleryGrid = ({ photos, category }: Props) => {
               marginBottom: gutter,
             }}
           >
-            <ImageContainer
+            <ImageKitContainer
               photo={photo}
               quality={80}
               onClick={() => openPopup(photo.fileId)}

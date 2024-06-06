@@ -1,4 +1,4 @@
-import ImageContainer from '../../components/ImageContainer';
+import ImageKitContainer from '../ImageKitContainer';
 import { gutter } from '../../utils/constants';
 import HorizontalScroll from 'react-scroll-horizontal';
 
@@ -26,7 +26,7 @@ const GallerySlide = ({ photos, category }: Props) => {
       ? photos
           .sort((a, b) => b.customMetadata.order - a.customMetadata.order)
           .map((photo, i) => (
-            <ImageContainer
+            <ImageKitContainer
               woWrapper
               photo={photo}
               key={i}

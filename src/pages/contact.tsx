@@ -5,6 +5,7 @@ import { Alert } from '@mui/material';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
 import { Helmet } from 'react-helmet-async';
+import ImageWithTransition from '../components/ImageWithTransition';
 
 const Contact = () => {
   const form = React.useRef<HTMLFormElement>(null);
@@ -128,16 +129,18 @@ const Contact = () => {
         </div>
         <div
           className={`w-full relative overflow-hidden ${
-            isMobile ? 'h-80' : ''
+            isMobile ? 'h-44' : ''
           }`}
         >
-          <div
-            className="w-full h-full relative overflow-hidden bg-cover bg-center"
-            style={{
-              maxWidth: '700px',
-              backgroundImage:
-                'url("https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg")',
-            }}
+          <ImageWithTransition
+            src="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg"
+            alt="picture of Thomas"
+            width={0}
+            height={0}
+            className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+              isMobile ? 'w-full top-2/3' : 'w-auto h-full top-1/2'
+            }`}
+            style={{ maxWidth: 'unset' }}
           />
         </div>
       </div>

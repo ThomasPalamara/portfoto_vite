@@ -2,6 +2,7 @@ import Title from '../components/Title';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
 import { Helmet } from 'react-helmet-async';
+import ImageWithTransition from '../components/ImageWithTransition';
 
 const AboutMe = () => {
   const isMobile = useIsMobile();
@@ -24,7 +25,7 @@ const AboutMe = () => {
             isMobile ? 'h-44' : ''
           }`}
         >
-          <img
+          <ImageWithTransition
             src="https://ik.imagekit.io/uiw3np2kr8ww/about_me.jpg"
             alt="picture of Thomas"
             width={0}
