@@ -1,10 +1,11 @@
+import { useState } from 'react';
+
 type Props = {
   photo: Partial<Photo> & { filePath: string };
   quality?: number;
   woWrapper?: boolean;
   onClick?: (arg0: any) => void;
   [key: string]: any;
-  onLoadingComplete?: (id: string) => void;
 };
 
 const ImageContainer = ({
@@ -12,9 +13,10 @@ const ImageContainer = ({
   quality = 20,
   woWrapper = false,
   onClick,
-  onLoadingComplete,
   ...other
 }: Props) => {
+  const [loaded, setLoaded] = useState(false);
+  console.log('loaded :', loaded);
   const comp = (
     <img
       onClick={() => onClick && onClick(photo)}
@@ -25,10 +27,12 @@ const ImageContainer = ({
       width={0}
       height={0}
       onLoad={() => {
-        onLoadingComplete && photo.fileId && onLoadingComplete(photo.fileId);
+        setLoaded(true);
       }}
-      className="h-full w-auto cursor-pointer"
-      loading="eager"
+      className={`h-full w-auto cursor-pointer transition-opacity duration-1000 ease-in-out ${
+        loaded ? 'opacity-100' : 'opacity-0'
+      }`}
+      loading="lazy"
       data-id={photo.fileId}
       {...other}
     />

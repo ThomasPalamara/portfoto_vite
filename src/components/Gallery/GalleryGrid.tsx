@@ -25,6 +25,7 @@ const GalleryGrid = ({ photos, category }: Props) => {
           </span>
         </div>
       </div>
+
       {photos &&
         photos.length > 0 &&
         photos.map((photo) => (
@@ -42,6 +43,8 @@ const GalleryGrid = ({ photos, category }: Props) => {
             />
           </div>
         ))}
+      <div style={{ width: colSize }}>&nbsp;</div>
+      <div style={{ width: colSize }}>&nbsp;</div>
     </Masonry>
   );
 };
