@@ -5,6 +5,7 @@ type Props = {
   quality?: number;
   woWrapper?: boolean;
   onClick?: (arg0: any) => void;
+  hasLoaded: () => void;
   [key: string]: any;
 };
 
@@ -13,10 +14,11 @@ const ImageContainer = ({
   quality = 20,
   woWrapper = false,
   onClick,
+  hasLoaded,
   ...other
 }: Props) => {
   const [loaded, setLoaded] = useState(false);
-  console.log('loaded :', loaded);
+
   const comp = (
     <img
       onClick={() => onClick && onClick(photo)}
@@ -28,6 +30,7 @@ const ImageContainer = ({
       height={0}
       onLoad={() => {
         setLoaded(true);
+        hasLoaded();
       }}
       className={`h-full w-auto cursor-pointer transition-opacity duration-1000 ease-in-out ${
         loaded ? 'opacity-100' : 'opacity-0'
