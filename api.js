@@ -14,7 +14,7 @@ app.get('/api/images', async (req, res) => {
     skip: 0,
     limit: 10,
   });
-  console.log('list :', list);
+
   res.json(list);
 });
 

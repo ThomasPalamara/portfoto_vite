@@ -12,8 +12,7 @@ const GallerySlide = ({ photos, category }: Props) => {
   const [loadedPictures, setLoadedPictures] = useState(0);
   const HScroll = HorizontalScroll as any;
   const { openPopup } = usePopup(photos || []);
-  console.log('loadedPictures :', loadedPictures);
-  console.log('photos.length :', photos.length);
+
   const transitionClasses = `${
     loadedPictures === photos?.length ? 'opacity-1' : 'opacity-0'
   } transition-opacity duration-1000 ease-in-out`;
