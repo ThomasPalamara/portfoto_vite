@@ -13,8 +13,10 @@ import Footer from './components/Navigation/Footer';
 import PageTitle from './components/Navigation/PageTitle';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { routes } from './router';
+import { useIsMobile } from './utils/hooks';
 
 const PageLayout = () => {
+  const isMobile = useIsMobile();
   const navHeight = 100;
   const footerHeight = 60;
 
@@ -40,7 +42,12 @@ const PageLayout = () => {
         <CSSTransition key={location.key} classNames="fade" timeout={300}>
           <div
             className="w-full p-0 m-0 overflow-x-hidden flex justify-center"
-            style={{ height: `calc(99vh - ${navHeight + footerHeight}px)` }}
+            style={{
+              height:
+                !isMobile || location.pathname === '/'
+                  ? `calc(99vh - ${navHeight + footerHeight}px)`
+                  : 'unset',
+            }}
           >
             <Outlet />
           </div>
