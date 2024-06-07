@@ -42,7 +42,9 @@ const Portfolio = () => {
     categories.map((category, i) => (
       <div
         key={i}
-        className="bg-center bg-cover flex-shrink-0 w-1/2"
+        className={`bg-center bg-cover flex-shrink-0 ${
+          isMobile ? 'w-full' : 'w-1/2'
+        }`}
         style={{
           height: '300px',
           padding: `${gutter}px`,

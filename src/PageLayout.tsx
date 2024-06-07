@@ -31,7 +31,7 @@ const PageLayout = () => {
   const pageNameString = is404 ? '404' : pageName === '' ? 'home' : pageName;
 
   return (
-    <div className="body h-full min-h-screen px-16">
+    <div className="body h-full min-h-screen px-2 md:px-16">
       <Nav height={navHeight} />
 
       <PageTitle title={pageNameString} />
