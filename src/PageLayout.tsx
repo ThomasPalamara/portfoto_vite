@@ -41,7 +41,7 @@ const PageLayout = () => {
       <TransitionGroup component={null}>
         <CSSTransition key={location.key} classNames="fade" timeout={300}>
           <div
-            className="w-full p-0 m-0 overflow-x-hidden flex justify-center"
+            className="w-full p-0 m-0 md:overflow-x-hidden flex justify-center"
             style={{
               height:
                 !isMobile || location.pathname === '/'
