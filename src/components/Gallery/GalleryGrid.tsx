@@ -3,7 +3,7 @@ import { gutter } from '../../utils/constants';
 import Masonry from '@mui/lab/Masonry';
 import Title from '../Title';
 import { usePopup } from '../Contexts/PopupContext';
-import { useIsMobile } from '../../utils/hooks';
+import { getFadeInClasses, useIsMobile } from '../../utils/hooks';
 import { useState } from 'react';
 
 type Props = { photos?: Photo[]; category: Category };
@@ -14,9 +14,10 @@ const GalleryGrid = ({ photos, category }: Props) => {
   const isMobile = useIsMobile();
   const colSize = isMobile ? '49%' : '32%';
 
-  const transitionClasses = `${
-    loadedPictures === photos?.length ? 'opacity-1' : 'opacity-0'
-  } transition-opacity duration-1000 ease-in-out`;
+  const transitionClasses = getFadeInClasses(
+    loadedPictures === photos?.length,
+    1
+  );
 
   return (
     <Masonry columns={4} spacing={2}>

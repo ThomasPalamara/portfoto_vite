@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getFadeInClasses } from '../utils/hooks';
 
 type Props = {
   photo: Partial<Photo> & { filePath: string };
@@ -32,9 +33,10 @@ const ImageContainer = ({
         setLoaded(true);
         hasLoaded();
       }}
-      className={`h-full w-auto cursor-pointer transition-opacity duration-1000 ease-in-out ${
-        loaded ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`h-full w-auto cursor-pointer ${getFadeInClasses(
+        loaded,
+        0.5
+      )}`}
       loading="lazy"
       data-id={photo.fileId}
       {...other}

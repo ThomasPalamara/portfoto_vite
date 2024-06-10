@@ -2,7 +2,7 @@ export const siteTitle = 'Thomas Palamara Photography';
 export const gutter = 15;
 export const categories: Category[] = [
   {
-    title: 'Lofoten',
+    title: 'Lofoten Islands',
     slug: 'lofoten',
     description: `In all my life, I've never been so captivated. The trip to the Lofoten Islands left an indelible memory.
       Witnessing the majestic mountains glow under the Northern Lights at night, exploring vibrant fishing villages,

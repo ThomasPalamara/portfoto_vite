@@ -1,4 +1,5 @@
 import { ImgHTMLAttributes, useState } from 'react';
+import { getFadeInClasses } from '../utils/hooks';
 
 type Props = {
   photo: Partial<Photo> & { filePath: string };
@@ -14,9 +15,7 @@ const ImageContainer = ({
   const [loaded, setLoaded] = useState(false);
   return (
     <img
-      className={`${className} transition-opacity duration-500 ease-in-out ${
-        loaded ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`${className} ${getFadeInClasses(loaded, 0.5)}`}
       width={0}
       height={0}
       onLoad={() => {

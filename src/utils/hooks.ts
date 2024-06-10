@@ -20,3 +20,9 @@ export function useIsMobile() {
 
   return isMobile;
 }
+
+export const getFadeInClasses = (trigger: boolean, duration: number = 0.5) => {
+  return `transition-opacity duration-${duration * 1000} ease-in-out opacity-${
+    trigger ? '100' : '0'
+  }`;
+};
