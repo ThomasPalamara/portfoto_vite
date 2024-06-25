@@ -26,3 +26,15 @@ export const getFadeInClasses = (trigger: boolean, duration: number = 0.5) => {
     trigger ? '100' : '0'
   }`;
 };
+
+export const sortPhotos = (a: Photo, b: Photo) => {
+  const x = a.customMetadata.Order;
+  const y = b.customMetadata.Order;
+  if (x === undefined) {
+    return 1;
+  }
+  if (y === undefined) {
+    return -1;
+  }
+  return x - y;
+};

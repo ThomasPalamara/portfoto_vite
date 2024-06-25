@@ -19,7 +19,7 @@ type Photo = {
   hasAlpha: boolean;
   mime: string;
   customMetadata: {
-    order: number;
+    Order: number;
   };
 };
 

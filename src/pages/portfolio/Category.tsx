@@ -5,7 +5,7 @@ import { categories, siteTitle } from '../../utils/constants';
 import GallerySlide from '../../components/Gallery/GallerySlide';
 import GalleryGrid from '../../components/Gallery/GalleryGrid';
 import GalleryControl from '../../components/Gallery/GalleryControl';
-import { useIsMobile } from '../../utils/hooks';
+import { sortPhotos, useIsMobile } from '../../utils/hooks';
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import Loader from '../../components/Loader';
@@ -43,6 +43,7 @@ const Category = () => {
   const Gallery = grid || isMobile ? GalleryGrid : GallerySlide;
 
   if (isLoading || !data) return <Loader />;
+
   return (
     <>
       <Helmet>
@@ -50,7 +51,7 @@ const Category = () => {
       </Helmet>
       {!isMobile && <GalleryControl grid={grid} setGrid={setGrid} />}
 
-      <Gallery photos={data} category={category} />
+      <Gallery photos={data.sort(sortPhotos)} category={category} />
     </>
   );
 };
