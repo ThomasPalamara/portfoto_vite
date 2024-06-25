@@ -5,7 +5,6 @@ import { Alert } from '@mui/material';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
 import { Helmet } from 'react-helmet-async';
-import ImageWithTransition from '../components/ImageWithTransition';
 
 const Contact = () => {
   const form = React.useRef<HTMLFormElement>(null);
@@ -53,7 +52,7 @@ const Contact = () => {
             or just to say hello. I will answer you as soon as possible.
           </p>
           <p className="pb-8">
-            You can also follow me on my instagram{' '}
+            You can also follow me or contact me by DM on my instagram{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -131,15 +130,13 @@ const Contact = () => {
             isMobile ? 'hidden' : ''
           }`}
         >
-          <ImageWithTransition
-            src="https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg"
-            alt="picture of Thomas"
-            width={0}
-            height={0}
-            className={`absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-              isMobile ? 'w-full top-2/3' : 'w-auto h-full top-1/2'
-            }`}
-            style={{ maxWidth: 'unset' }}
+          <div
+            className="w-full h-full relative overflow-hidden bg-cover bg-center"
+            style={{
+              maxWidth: '700px',
+              backgroundImage:
+                'url("https://ik.imagekit.io/uiw3np2kr8ww/contact.jpg")',
+            }}
           />
         </div>
       </div>
