@@ -1,10 +1,12 @@
 import { Instagram, LinkedIn } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   height: number | string;
 };
 
 const Nav = ({ height }: Props) => {
+  const { t } = useTranslation('footer');
   const socialItems = [
     {
       icon: Instagram,
@@ -23,7 +25,7 @@ const Nav = ({ height }: Props) => {
       style={{ height: height }}
     >
       <div className="flex items-center flex-shrink-0 mr-6 text-xs">
-        © {new Date().getFullYear()} . All Rights Reserved.{' '}
+        © {new Date().getFullYear()} . {t('rights')}.{' '}
         <span
           style={{
             margin: '0 8px',

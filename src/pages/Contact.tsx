@@ -5,12 +5,14 @@ import { Alert } from '@mui/material';
 import { useIsMobile } from '../utils/hooks';
 import { siteTitle } from '../utils/constants';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const form = React.useRef<HTMLFormElement>(null);
   const [done, setDone] = React.useState(false);
   const [error, setError] = React.useState(false);
   const isMobile = useIsMobile();
+  const { t } = useTranslation('contact');
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>{'Contact me - ' + siteTitle}</title>
+        <title>{t('title') + ' - ' + siteTitle}</title>
         <link
           rel="preload"
           as="image"
@@ -46,13 +48,9 @@ const Contact = () => {
       >
         <div className="bg-white pr-10 pl-12 text-base font-extralight overflow-scroll flex flex-col justify-center pt-24 pb-9 md:py-9">
           <Title title="Contact" />
-          <p className="pb-2">
-            Do not hesitate to contact me for whatever reason, a problem about
-            the website, a question about my work, a request for a photo print,
-            or just to say hello. I will answer you as soon as possible.
-          </p>
+          <p className="pb-2">{t('paragraph1')}</p>
           <p className="pb-8">
-            You can also follow me or contact me by DM on my instagram{' '}
+            {t('paragraph2')}{' '}
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -67,9 +65,7 @@ const Contact = () => {
 
           {error && (
             <Alert severity="error" className="mb-4">
-              There has been a problem submitting this form, make sure you
-              filled it properly, if you still experience issues feel free to
-              directly contact me to{' '}
+              {t('error')}{' '}
               <span
                 className="font-bold"
                 onClick={() =>
@@ -82,7 +78,7 @@ const Contact = () => {
           )}
           {done ? (
             <Alert className="mt-6" severity="success">
-              Your message has been sent
+              {t('success')}
             </Alert>
           ) : (
             <form ref={form} onSubmit={sendEmail}>
@@ -92,7 +88,7 @@ const Contact = () => {
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     id="name"
                     type="text"
-                    placeholder="Name"
+                    placeholder={t('form.name')}
                   />
                 </div>
               </div>
@@ -102,7 +98,7 @@ const Contact = () => {
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     id="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder={t('form.email')}
                   />
                 </div>
               </div>
@@ -111,7 +107,7 @@ const Contact = () => {
                   <textarea
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     name="message"
-                    placeholder="Your message"
+                    placeholder={t('message')}
                     style={{ height: '100px' }}
                   />
                 </div>
@@ -120,7 +116,7 @@ const Contact = () => {
                 className="bg-gray-700 hover:bg-gray-400 text-white py-2 px-8 inline-flex items-center"
                 type="submit"
               >
-                Submit
+                {t('form.send')}
               </button>
             </form>
           )}

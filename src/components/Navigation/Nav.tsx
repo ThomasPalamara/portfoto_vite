@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useIsMobile } from '../../utils/hooks';
+import LanguageSelector from './LanguageSelector';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 type Props = {
   height: number | string;
 };
@@ -8,23 +10,24 @@ type Props = {
 const Nav = ({ height }: Props) => {
   const [mobileNav, setMobileNav] = useState(false);
   const isMobile = useIsMobile();
+  const { i18n, t } = useTranslation('nav');
 
   const navItems = [
     {
-      title: 'Home',
+      title: t('home'),
       slug: '/',
     },
     {
-      title: 'Portfolio',
+      title: t('portfolio'),
       slug: '/portfolio',
       isDropdown: false,
     },
     {
-      title: 'About Me',
+      title: t('about'),
       slug: '/about-me',
     },
     {
-      title: 'Contact',
+      title: t('contact'),
       slug: '/contact',
     },
   ];
@@ -79,6 +82,9 @@ const Nav = ({ height }: Props) => {
               </NavLink>
             </li>
           ))}
+          <li>
+            <LanguageSelector />
+          </li>
         </ul>
       </div>
     </nav>

@@ -2,6 +2,7 @@ import { StrictMode, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
+import './i18n';
 import 'tailwindcss/tailwind.css';
 import './index.css';
 

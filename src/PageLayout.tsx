@@ -14,9 +14,11 @@ import PageTitle from './components/Navigation/PageTitle';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { routes } from './router';
 import { useIsMobile } from './utils/hooks';
+import { useTranslation } from 'react-i18next';
 
 const PageLayout = () => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation('nav');
   const navHeight = 100;
   const footerHeight = 60;
 
@@ -30,7 +32,7 @@ const PageLayout = () => {
   const arrPath = location.pathname.split('/');
   const pageName = arrPath[arrPath.length - 1].replace('-', ' ');
 
-  const pageNameString = is404 ? '404' : pageName === '' ? 'home' : pageName;
+  const pageNameString = is404 ? '404' : pageName === '' ? t('home') : pageName;
 
   return (
     <div className="body h-full min-h-screen px-2 md:px-16">

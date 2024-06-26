@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getFadeInClasses } from '../utils/hooks';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const ImageContainer = () => {
   const [isTakingAges, setIsTakingAges] = useState(false);
   const [isSpeed, setIsSpeed] = useState(true);
+  const { t } = useTranslation('loader');
 
   // If the loading is fast, don't show the loader at all. This is to prevent the loader from flashing on the screen.
   // If the loading is slow, show the text after 4 seconds. This is to inform the user that the application is still loading.
@@ -31,12 +34,11 @@ const ImageContainer = () => {
     >
       <div className="loader animate-pulse" />
       <div className={`text-center ${textFadeInClasses}`}>
-        <p className="mb-4 mt-8 text-lg font-light text-gray-500 dark:text-gray-400">
-          This application server is hosted for free, the first loading might
-          take longer. <br /> Things should be faster after the first load.
+        <p className="mb-4 mt-8 text-lg font-light text-gray-500 dark:text-gray-400 whitespace-pre-line">
+          {t('longLoading')}
         </p>
         <p className="mb-4 text-lg font-bold text-gray-500 dark:text-gray-400">
-          Thank you for your patience
+          {t('thanksForPatience')}
         </p>
       </div>
     </div>

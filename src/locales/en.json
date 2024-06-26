@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "heading1": "My photography portfolio",
+    "heading2": "Browse categories"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "loader": {
+    "loading": "Loading",
+    "longLoading": "This application server is hosted for free, the first loading might take longer. \n Things should be faster after the first load.",
+    "thanksForPatience": "Thank you for your patience."
+  },
+  "aboutMe": {
+    "title": "About me",
+    "paragraphs": [
+      "Hello, I'm Thomas, a passionate wildlife and landscape photographer captivated by the beauty of the natural world. My journey began in 2021 during my hikes. Surrounded by breathtaking landscapes and fascinating wildlife, I wanted to capture and share these mindful moments.",
+      "As a self-taught photographer, I hone my skills through practice and exploration. Wildlife photography has become my specialization, allowing me to connect with the local fauna in parks and nature reserves.",
+      "What truly inspires me is the work of photographers who strive to make a difference for the animals they capture through their lenses. It's my hope that someday, I can contribute to raising awareness and appreciation for the wildlife that shares our planet.",
+      "While I may be a beginner in the field, I embrace the opportunity to learn and grow. Every shutter click is a chance to learn more about animal behaviour. I find joy in studying my subjects as I encounter and capture them in their natural habitats."
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "paragraph1": "Do not hesitate to contact me for whatever reason, a problem about the website, a question about my work, a request for a photo print, or just to say hello. I will answer you as soon as possible.",
+    "paragraph2": "You can also follow me or contact me by DM on my instagram",
+    "error": "There has been a problem submitting this form, make sure you filled it properly, if you still experience issues feel free to directly contact me to ",
+    "success": "Your message has been sent successfully, I will get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Your message",
+      "send": "Send"
+    }
+  },
+  "404": {
+    "message": "Something's missing.",
+    "message2": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
+    "cta": "Back to Homepage"
+  },
+  "categories": {
+    "lofoten": {
+      "title": "Lofoten Islands",
+      "description": "In all my life, I've never been so captivated. The trip to the Lofoten Islands left an indelible memory. Witnessing the majestic mountains glow under the Northern Lights at night, exploring vibrant fishing villages, and observing the graceful white-tailed eagles—all combined to create an awe-inspiring and unforgettable journey."
+    },
+    "london-parks": {
+      "title": "London Parks",
+      "description": "I have never imagined that I would discover such a diverse wildlife in one of Europe’s largest city. We are so fortunate to have so many green spaces and beautiful royal parks. Richmond park is my all time favourite for weekend mornings."
+    },
+    "scottish-highlands": {
+      "title": "Scottish Highlands",
+      "description": "Scotland is my favourite holiday destination. Among its many wonders, the Cairngorms stand out, boasting ancient Caledonian forests and mysterious lochs. Watching red squirrels playfully leap through the trees and observing the unique crested tits is an absolute joy in this peaceful place. On the other hand, the Isle of Skye offers a dramatic contrast, with rugged landscapes and picturesque mountains gracing its terrain. Keep an eye at the sky for majestic eagles or at the for the playful otters. Scotland's diverse beauty never fails to captivate me, leaving me yearning for more with each visit."
+    },
+    "british-coastline": {
+      "title": "British Coastline",
+      "description": "The British coastline is home to a variety of seabirds that come to breed during the summer months. One great place to observe these birds is Bempton Cliffs, where you can see gannets, guillemots, and kittiwakes nesting on the cliffs. Skomer Island is another great spot to see seabirds, with its population of puffins and Manx shearwaters. The coastline is truly a haven amidst the chaos of thousands of birds flying and squawking."
+    }
+  }
+}
