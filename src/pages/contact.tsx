@@ -13,22 +13,33 @@ const Contact = () => {
   const [error, setError] = React.useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation('contact');
+  console.log(
+    'import.meta.env.VITE_EMAILJS_PUBLIC :',
+    import.meta.env.VITE_EMAILJS_PUBLIC
+  );
 
   const sendEmail = (e: any) => {
+    setError(false);
+    setDone(false);
     e.preventDefault();
-
-    if (form.current)
+    if (form.current) {
       emailjs
-        .sendForm('service_bby2g87', 'template_iwu8059', form.current, 'asdf')
+        .sendForm(
+          'service_bby2g87',
+          'template_iwu8059',
+          form.current,
+          import.meta.env.VITE_EMAILJS_PUBLIC
+        )
         .then(
           () => {
             setDone(true);
           },
-          () => {
+          (e) => {
             setError(true);
+            console.log('error :', e);
           }
         );
-    else setError(true);
+    } else setError(true);
   };
 
   return (
@@ -107,7 +118,7 @@ const Contact = () => {
                   <textarea
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     name="message"
-                    placeholder={t('message')}
+                    placeholder={t('form.message')}
                     style={{ height: '100px' }}
                   />
                 </div>
