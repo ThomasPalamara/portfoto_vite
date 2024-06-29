@@ -1,11 +1,10 @@
 module.exports = {
-  purge: [],
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-
-    // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: {
+    mode: 'all',
+    preserveHtmlElements: false,
+    content: ['./src/**/*.js', './node_modules/flatpickr/**/*.js'],
+  },
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
