@@ -6,7 +6,7 @@ type Props = {
   quality?: number;
   woWrapper?: boolean;
   onClick?: (arg0: any) => void;
-  hasLoaded: () => void;
+  hasLoaded?: () => void;
   [key: string]: any;
 };
 
@@ -15,7 +15,7 @@ const ImageContainer = ({
   quality = 20,
   woWrapper = false,
   onClick,
-  hasLoaded,
+  hasLoaded = () => {},
   ...other
 }: Props) => {
   const [loaded, setLoaded] = useState(false);
