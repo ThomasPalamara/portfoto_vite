@@ -1,13 +1,6 @@
 import { ImgHTMLAttributes, useState } from 'react';
 import { getFadeInClasses } from '../utils/hooks';
 
-type Props = {
-  photo: Partial<Photo> & { filePath: string };
-  quality?: number;
-  onClick?: (arg0: any) => void;
-  [key: string]: any;
-};
-
 const ImageContainer = ({
   className,
   ...other

@@ -1,4 +1,7 @@
 {
+  "common": {
+    "siteDescription": "My wildlife and landscape photography portfolio"
+  },
   "hero": {
     "heading1": "My photography portfolio",
     "heading2": "Browse categories"

@@ -10,7 +10,7 @@ type Props = {
 const Nav = ({ height }: Props) => {
   const [mobileNav, setMobileNav] = useState(false);
   const isMobile = useIsMobile();
-  const { i18n, t } = useTranslation('nav');
+  const { t } = useTranslation('nav');
 
   const navItems = [
     {

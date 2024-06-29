@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { getFadeInClasses } from '../utils/hooks';
-import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
 const ImageContainer = () => {

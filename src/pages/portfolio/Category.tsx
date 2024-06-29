@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import 'swiper/css';
-import 'swiper/css/mousewheel';
 import { categories, siteTitle } from '../../utils/constants';
 import GallerySlide from '../../components/Gallery/GallerySlide';
 import GalleryGrid from '../../components/Gallery/GalleryGrid';
