@@ -99,6 +99,7 @@ const Contact = () => {
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     id="name"
                     type="text"
+                    name="name"
                     placeholder={t('form.name')}
                   />
                 </div>
@@ -109,6 +110,7 @@ const Contact = () => {
                     className="bg-gray-100 appearance-none border-b border-gray-100 w-full py-2 px-4 text-gray-700 font-light"
                     id="email"
                     type="email"
+                    name="email"
                     placeholder={t('form.email')}
                   />
                 </div>
