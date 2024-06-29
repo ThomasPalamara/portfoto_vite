@@ -34,6 +34,7 @@ app.render(
     <HelmetProvider>
       <Helmet>
         <link rel="dns-prefetch preconnect" href="https://ik.imagekit.io" />
+        <link rel="dns-prefetch preconnect" href="https://fonts.gstatic.com" />
         <link
           rel="dns-prefetch preconnect"
           href="https://fonts.googleapis.com"

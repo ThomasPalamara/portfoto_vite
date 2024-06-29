@@ -37,7 +37,11 @@ const Nav = ({ height }: Props) => {
       style={{ height: isMobile ? 'unset' : height }}
     >
       <NavLink to="/" className="flex items-center py-2">
-        <img style={{ width: '160px' }} src="/logo.svg" alt="logo" />
+        <img
+          style={{ width: '160px', height: '70px' }}
+          src="/logo.svg"
+          alt="logo"
+        />
       </NavLink>
       <button
         data-collapse-toggle="navbar-default"
