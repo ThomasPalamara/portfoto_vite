@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
 const NotFound = () => {
-  const { t } = useTranslation('notFound');
+  const { t } = useTranslation('404');
   return (
     <section className="dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
