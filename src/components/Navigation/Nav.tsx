@@ -3,6 +3,7 @@ import { useIsMobile } from '../../utils/hooks';
 import LanguageSelector from './LanguageSelector';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { petNavItems, navItems as mainNavItems } from '../../utils/constants';
 type Props = {
   height: number | string;
 };
@@ -12,25 +13,9 @@ const Nav = ({ height }: Props) => {
   const isMobile = useIsMobile();
   const { t } = useTranslation('nav');
 
-  const navItems = [
-    {
-      title: t('home'),
-      slug: '/',
-    },
-    {
-      title: t('portfolio'),
-      slug: '/portfolio',
-      isDropdown: false,
-    },
-    {
-      title: t('about'),
-      slug: '/about-me',
-    },
-    {
-      title: t('contact'),
-      slug: '/contact',
-    },
-  ];
+  const isPetSubdomain = window.location.hostname.startsWith('pets.');
+
+  const navItems = isPetSubdomain ? petNavItems : mainNavItems;
   return (
     <nav
       className="flex flex-wrap items-center justify-between"
@@ -39,7 +24,7 @@ const Nav = ({ height }: Props) => {
       <NavLink to="/" className="flex items-center py-2">
         <img
           style={{ width: '160px', height: '70px' }}
-          src="/logo.svg"
+          src={`/${isPetSubdomain ? 'logo-pets.png' : 'logo.svg'}`}
           alt="logo"
         />
       </NavLink>
@@ -82,7 +67,7 @@ const Nav = ({ height }: Props) => {
                 onClick={() => setMobileNav(false)}
                 className="nav__link block my-2 lg:inline-block lg:my-0 text-black font-extralight tracking-widest text-sm mr-8"
               >
-                {item.title.toUpperCase()}
+                {t(item.title).toUpperCase()}
               </NavLink>
             </li>
           ))}

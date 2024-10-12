@@ -10,8 +10,16 @@ import Contact from './pages/Contact';
 import Category from './pages/portfolio/Category';
 import PageLayout from './PageLayout';
 import NotFound from './pages/NotFound';
+import PetPhotography from './pages/petPhotography';
 
-export const routes = (
+const isPetSubdomain = window.location.hostname.startsWith('pets.');
+console.log(window.location.hostname);
+console.log(isPetSubdomain);
+export const routes = isPetSubdomain ? (
+  <Route element={<PageLayout />}>
+    <Route path="/*" element={<PetPhotography />} />
+  </Route>
+) : (
   <Route element={<PageLayout />}>
     <Route path="/" element={<Home />} />
     <Route path="/portfolio" element={<Portfolio />} />

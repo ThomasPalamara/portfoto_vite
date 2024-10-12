@@ -15,3 +15,38 @@ export const categories: Category[] = slugs.map((slug) => ({
   slug,
   description: i18n.t(`categories:${slug}.description`),
 }));
+
+export const navItems = [
+  {
+    title: 'home',
+    slug: '/',
+  },
+  {
+    title: 'portfolio',
+    slug: '/portfolio',
+    isDropdown: false,
+  },
+  {
+    title: 'about',
+    slug: '/about-me',
+  },
+  {
+    title: 'contact',
+    slug: '/contact',
+  },
+];
+
+export const petNavItems = [
+  {
+    title: 'home',
+    slug: '/',
+  },
+  {
+    title: 'gallery',
+    slug: '/gallery',
+  },
+  {
+    title: 'contact',
+    slug: '/contact',
+  },
+];

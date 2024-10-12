@@ -1,17 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '../../utils/hooks';
 
 const LanguageSelector = () => {
   const { i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const [currentLanguage, setCurrentLanguage] = useState(
+    i18n.language.slice(0, 2)
+  );
   const languageOptions = ['en', 'fr'];
+
+  useEffect(() => {
+    setCurrentLanguage(i18n.language.slice(0, 2));
+  }, [i18n.language]);
 
   const isMobile = useIsMobile();
 
   const [showOptions, setShowOptions] = useState(false);
 
   const handleLanguageChange = (language: string) => {
+    setCurrentLanguage(language);
     i18n.changeLanguage(language);
     setShowOptions(false);
   };
@@ -24,7 +31,7 @@ const LanguageSelector = () => {
       >
         <img
           style={{ maxWidth: '20px' }}
-          src={`flags/${currentLanguage}.svg`}
+          src={`/flags/${currentLanguage}.svg`}
         />
         <span>{currentLanguage.toUpperCase()}</span>
       </div>
