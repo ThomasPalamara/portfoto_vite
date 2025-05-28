@@ -34,6 +34,13 @@ const PageLayout = () => {
 
   const pageNameString = is404 ? '404' : pageName === '' ? t('home') : pageName;
 
+  const pagesLimitedInHeight = !location.pathname.includes('portfolio');
+
+  const variableStyle =
+    location.pathname === '/' || (!isMobile && pagesLimitedInHeight)
+      ? { height: `calc(99vh - ${navHeight + footerHeight}px)` }
+      : { height: 'unset' };
+
   return (
     <div className="body h-full min-h-screen px-2 md:px-16">
       <Nav height={navHeight} />
@@ -44,12 +51,7 @@ const PageLayout = () => {
         <CSSTransition key={location.key} classNames="fade" timeout={300}>
           <div
             className="w-full p-0 m-0 md:overflow-x-hidden flex justify-center"
-            style={{
-              height:
-                !isMobile || location.pathname === '/'
-                  ? `calc(99vh - ${navHeight + footerHeight}px)`
-                  : 'unset',
-            }}
+            style={variableStyle}
           >
             <Outlet />
           </div>

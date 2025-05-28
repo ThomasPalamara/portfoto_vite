@@ -27,7 +27,8 @@ const Portfolio = () => {
         key={i}
         className="bg-center bg-cover flex justify-center items-end pb-20 flex-shrink-0"
         style={{
-          width: '450px',
+          height: '500px',
+
           margin: `0 ${gutter}px`,
           backgroundImage: `url(categories/${category.slug}.jpg)`,
         }}
@@ -69,18 +70,21 @@ const Portfolio = () => {
         <title>{'Portfolio - ' + siteTitle}</title>
       </Helmet>
       <div
-        className={`h-full w-full flex justify-center ${
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full ${
           isMobile && 'flex-wrap'
         }`}
         ref={ref}
       >
-        {isMobile ? (
+        {/* To activate scroll flow uncomment the following code */}
+        {/* {isMobile ? (
           mobileCategoryElements()
         ) : isOverflowed ? (
           <HScroll reverseScroll>{categoryElements()}</HScroll>
         ) : (
           categoryElements()
-        )}
+        )} */}
+
+        {isMobile ? mobileCategoryElements() : categoryElements()}
       </div>
     </>
   );

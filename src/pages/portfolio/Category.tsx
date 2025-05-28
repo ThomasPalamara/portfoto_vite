@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { categories, siteTitle } from '../../utils/constants';
 import GallerySlide from '../../components/Gallery/GallerySlide';
 import GalleryGrid from '../../components/Gallery/GalleryGrid';
+import GalleryGrid2 from '../../components/Gallery/GalleryGrid2';
 import GalleryControl from '../../components/Gallery/GalleryControl';
 import { sortPhotos, useIsMobile } from '../../utils/hooks';
 import { useParams } from 'react-router';
@@ -38,7 +39,7 @@ const Category = () => {
   const category =
     categories.find((e) => categoryParams === e.slug) || categories[0];
 
-  const Gallery = grid || isMobile ? GalleryGrid : GallerySlide;
+  const Gallery = grid || isMobile ? GalleryGrid2 : GallerySlide;
 
   if (isLoading || !data) return <Loader />;
 
