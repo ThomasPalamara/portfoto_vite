@@ -14,6 +14,7 @@ const Contact = () => {
   const isMobile = useIsMobile();
   const { t } = useTranslation('contact');
 
+
   const sendEmail = (e: any) => {
     setError(false);
     setDone(false);
