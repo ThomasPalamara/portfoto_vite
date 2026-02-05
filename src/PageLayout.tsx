@@ -36,10 +36,11 @@ const PageLayout = () => {
 
   const pagesLimitedInHeight = !location.pathname.includes('portfolio');
 
+const heightOfContent = `calc(99vh - ${navHeight + footerHeight}px)`;
   const variableStyle =
     location.pathname === '/' || (!isMobile && pagesLimitedInHeight)
-      ? { height: `calc(99vh - ${navHeight + footerHeight}px)` }
-      : { height: 'unset' };
+      ? { height: heightOfContent }
+      : { minHeight: heightOfContent };
 
   return (
     <div className="body h-full min-h-screen px-2 md:px-16">

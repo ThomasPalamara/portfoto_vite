@@ -46,7 +46,7 @@ const GallerySlide = ({ photos, category }: Props) => {
   ];
 
   return (
-    <div className="h-full w-full">
+    <div className="h-auto w-full">
       {photos && photos.length > 0 && (
         <HScroll reverseScroll>{galleryElements()}</HScroll>
       )}

@@ -56,11 +56,11 @@ const Popup = ({ photos, current, closePopup }: Props): JSX.Element => {
           Prev
         </div> */}
         <div
-          className="flex justify-center flex-col opacity-100 max-h-5/6 relative"
+          className="flex justify-center flex-col opacity-100 max-h-5/6 relative w-full"
           style={{ height: '90%' }}
         >
           <CloseIcon className="absolute right-4 top-12 text-white opacity-70" />
-          <ImageContainer photo={currentPhoto} woWrapper />
+          <ImageContainer photo={currentPhoto} />
         </div>
         {/* <div className={controlClasses} onClick={nexStep}>
           Next

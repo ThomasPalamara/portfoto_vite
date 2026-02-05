@@ -34,10 +34,10 @@
 
     "success": "Votre message a été envoyé avec succès, je vous recontacterai dès que possible",
     "form": {
-      "name": "Name",
+      "name": "Nom",
       "email": "Email",
       "message": "Votre message",
-      "send": "Send"
+      "send": "Envoyer"
     }
   },
   "404": {
@@ -47,20 +47,24 @@
   },
   "categories": {
     "lofoten": {
-      "title": "Lofoten Islands",
-      "description": "In all my life, I've never been so captivated. The trip to the Lofoten Islands left an indelible memory. Witnessing the majestic mountains glow under the Northern Lights at night, exploring vibrant fishing villages, and observing the graceful white-tailed eagles—all combined to create an awe-inspiring and unforgettable journey."
+      "title": "Îles Lofoten",
+      "description": "De toute ma vie, je n'ai jamais été aussi captivé. Le voyage aux îles Lofoten a laissé un souvenir indélébile. Voir les montagnes majestueuses briller sous les aurores boréales la nuit, explorer les villages de pêcheurs animés et observer les gracieux aigles à queue blanche, tout cela a créé un voyage impressionnant et inoubliable."
     },
     "london-parks": {
-      "title": "London Parks",
-      "description": "I have never imagined that I would discover such a diverse wildlife in one of Europe’s largest city. We are so fortunate to have so many green spaces and beautiful royal parks. Richmond park is my all time favourite for weekend mornings."
+      "title": "Parcs de Londres",
+      "description": "Je n'aurais jamais imaginé découvrir une faune aussi diversifiée dans l'une des plus grandes villes d'Europe. Nous avons la chance d'avoir autant d'espaces verts et de magnifiques parcs royaux. Richmond Park est mon préféré de tous les temps pour les matins de week-end."
     },
     "scottish-highlands": {
-      "title": "Scottish Highlands",
-      "description": "Scotland is my favourite holiday destination. Among its many wonders, the Cairngorms stand out, boasting ancient Caledonian forests and mysterious lochs. Watching red squirrels playfully leap through the trees and observing the unique crested tits is an absolute joy in this peaceful place. On the other hand, the Isle of Skye offers a dramatic contrast, with rugged landscapes and picturesque mountains gracing its terrain. Keep an eye at the sky for majestic eagles or at the for the playful otters. Scotland's diverse beauty never fails to captivate me, leaving me yearning for more with each visit."
+      "title": "Highlands Écossais",
+      "description": "L'Écosse est ma destination de vacances préférée. Parmi ses nombreuses merveilles, les Cairngorms se distinguent, avec leurs anciennes forêts calédoniennes et leurs lochs mystérieux. Regarder les écureuils roux sauter joyeusement à travers les arbres et observer les mésanges huppées uniques est un pur bonheur dans cet endroit paisible. D'un autre côté, l'île de Skye offre un contraste spectaculaire, avec des paysages accidentés et des montagnes pittoresques ornant son terrain. Gardez un œil sur le ciel pour les aigles majestueux ou sur la côte pour les loutres enjouées. La beauté diversifiée de l'Écosse ne manque jamais de me captiver, me laissant avec l'envie d'en voir plus à chaque visite."
     },
     "british-coastline": {
-      "title": "British Coastline",
-      "description": "The British coastline is home to a variety of seabirds that come to breed during the summer months. One great place to observe these birds is Bempton Cliffs, where you can see gannets, guillemots, and kittiwakes nesting on the cliffs. Skomer Island is another great spot to see seabirds, with its population of puffins and Manx shearwaters. The coastline is truly a haven amidst the chaos of thousands of birds flying and squawking."
+      "title": "Littoral Britannique",
+      "description": "Le littoral britannique abrite une variété d'oiseaux marins qui viennent se reproduire pendant les mois d'été. Un excellent endroit pour observer ces oiseaux est Bempton Cliffs, où vous pouvez voir des fous de Bassan, des guillemots et des mouettes tridactyles nicher sur les falaises. L'île de Skomer est un autre endroit formidable pour voir des oiseaux marins, avec sa population de macareux et de puffins des Anglais. Le littoral est vraiment un havre de paix au milieu du chaos de milliers d'oiseaux qui volent et crient."
+    },
+    "new-zealand": {
+      "title": "Terres Sauvages Néo-Zélandaises",
+      "description": "La Nouvelle-Zélande est un véritable paradis pour la photographie animalière. Le pays abrite une gamme diversifiée d'animaux, des impressionnants lions de mer aux albatros planant. Et on ne peut pas oublier la beauté des paysages."
     }
   }
 }

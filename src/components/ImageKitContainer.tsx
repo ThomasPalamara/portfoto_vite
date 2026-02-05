@@ -43,7 +43,7 @@ const ImageContainer = ({
     />
   );
   if (woWrapper) return comp;
-  return <figure className="h-full w-auto text-center">{comp}</figure>;
+  return <figure className="h-full w-auto text-center flex justify-center items-center">{comp}</figure>;
 };
 
 export default ImageContainer;

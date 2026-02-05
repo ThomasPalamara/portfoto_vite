@@ -21,7 +21,6 @@ const Category = () => {
         : true
     );
   }, [categoryParams]);
-
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}category/` + categoryParams)
       .then((res) => res.json())

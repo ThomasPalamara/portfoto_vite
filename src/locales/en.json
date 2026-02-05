@@ -49,8 +49,8 @@
   },
   "categories": {
     "lofoten": {
-      "title": "Lofoten Islands",
-      "description": "In all my life, I've never been so captivated. The trip to the Lofoten Islands left an indelible memory. Witnessing the majestic mountains glow under the Northern Lights at night, exploring vibrant fishing villages, and observing the graceful white-tailed eagles—all combined to create an awe-inspiring and unforgettable journey."
+      "title": "Lofoten Archipelago",
+      "description": "In all my life, I've never been so captivated. The trip to the Lofoten Archipelago left an indelible memory. Witnessing the majestic mountains glow under the Northern Lights at night, exploring vibrant fishing villages, and observing the graceful white-tailed eagles—all combined to create an awe-inspiring and unforgettable journey."
     },
     "london-parks": {
       "title": "London Parks",
@@ -63,6 +63,10 @@
     "british-coastline": {
       "title": "British Coastline",
       "description": "The British coastline is home to a variety of seabirds that come to breed during the summer months. One great place to observe these birds is Bempton Cliffs, where you can see gannets, guillemots, and kittiwakes nesting on the cliffs. Skomer Island is another great spot to see seabirds, with its population of puffins and Manx shearwaters. The coastline is truly a haven amidst the chaos of thousands of birds flying and squawking."
+    },
+    "new-zealand": {
+      "title": "Kiwi Wildlands",
+      "description": "New Zealand is a true paradise for wildlife photography. The country is home to a diverse range of animals, from the impressive sea lions to the soaring albatrosses. And you can't forget the beauty of the landscapes."
     }
   }
 }

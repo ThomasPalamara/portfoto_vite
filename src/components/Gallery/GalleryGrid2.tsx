@@ -1,12 +1,13 @@
 import { ProGallery } from 'pro-gallery';
 import 'pro-gallery/dist/statics/main.css';
 import { useRef } from 'react';
+import { usePopup } from '../Contexts/PopupContext';
 
 type Props = { photos?: Photo[]; category: Category };
 
 export const GalleryGrid2 = ({ photos }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const { openPopup } = usePopup(photos || []);
   const items = photos || [];
 
   const itemsWithMediaUrl = items.map((item) => ({
@@ -34,11 +35,16 @@ export const GalleryGrid2 = ({ photos }: Props) => {
     width: containerRef.current?.offsetWidth || window.innerWidth,
   };
 
-  // The eventsListener will notify you anytime something has happened in the gallery.
-  const eventsListener = (eventName: string, eventData: any) =>
-    console.log({ eventName, eventData });
 
-  // The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
+  const eventsListener = (eventName: string, eventData: any) => {
+
+    if(eventName === 'ITEM_ACTION_TRIGGERED') {
+      openPopup(eventData.id);
+      console.log('eventData :', eventData);
+    }
+  }
+
+
   const scrollingElement = window;
 
   return (
@@ -49,6 +55,7 @@ export const GalleryGrid2 = ({ photos }: Props) => {
         container={container}
         eventsListener={eventsListener}
         scrollingElement={scrollingElement}
+        
       />
     </div>
   );

@@ -8,6 +8,7 @@ const slugs = [
   'london-parks',
   'scottish-highlands',
   'british-coastline',
+  'new-zealand',
 ];
 
 export const categories: Category[] = slugs.map((slug) => ({
