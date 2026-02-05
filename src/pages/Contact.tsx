@@ -13,10 +13,6 @@ const Contact = () => {
   const [error, setError] = React.useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation('contact');
-  console.log(
-    'import.meta.env.VITE_EMAILJS_PUBLIC :',
-    import.meta.env.VITE_EMAILJS_PUBLIC
-  );
 
   const sendEmail = (e: any) => {
     setError(false);
