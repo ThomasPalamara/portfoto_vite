@@ -1,24 +1,24 @@
 import React from 'react';
 import { gutter, categories, siteTitle } from '../../utils/constants';
-import HorizontalScroll from 'react-scroll-horizontal';
+// import HorizontalScroll from 'react-scroll-horizontal';
 import { useIsMobile } from '../../utils/hooks';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
-  const itemWidth = 450 + gutter * 2;
+  // const itemWidth = 450 + gutter * 2;
 
   const ref = React.useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const isMobile = useIsMobile();
 
-  const isOverflowed = isMobile
-    ? false
-    : typeof window !== 'undefined' && window
-    ? window.innerWidth <= itemWidth * categories.length
-    : false;
+  // const isOverflowed = isMobile
+  //   ? false
+  //   : typeof window !== 'undefined' && window
+  //   ? window.innerWidth <= itemWidth * categories.length
+  //   : false;
 
-  const HScroll = HorizontalScroll as any;
+  // const HScroll = HorizontalScroll as any;
 
   const categoryElements = () =>
     categories.map((category, i) => (

@@ -1,8 +1,7 @@
-import React from 'react';
 
-type Props = {};
 
-const index = (props: Props) => {
+
+const index = () => {
   return <div>This is the pet photography page</div>;
 };
 

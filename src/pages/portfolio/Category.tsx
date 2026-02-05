@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { categories, siteTitle } from '../../utils/constants';
 import GallerySlide from '../../components/Gallery/GallerySlide';
-import GalleryGrid from '../../components/Gallery/GalleryGrid';
 import GalleryGrid2 from '../../components/Gallery/GalleryGrid2';
 import GalleryControl from '../../components/Gallery/GalleryControl';
 import { sortPhotos, useIsMobile } from '../../utils/hooks';

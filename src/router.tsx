@@ -13,8 +13,7 @@ import NotFound from './pages/NotFound';
 import PetPhotography from './pages/petPhotography';
 
 const isPetSubdomain = window.location.hostname.startsWith('pets.');
-console.log(window.location.hostname);
-console.log(isPetSubdomain);
+
 export const routes = isPetSubdomain ? (
   <Route element={<PageLayout />}>
     <Route path="/*" element={<PetPhotography />} />
